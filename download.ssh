@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Navigate to the models directory
+cd ./models/
+
+# Clone the repositories using the Hugging Face token
+echo "Cloning Llama-2-13b-chat-hf..."
+git clone https://huggingface.co/meta-llama/Llama-2-13b-chat
+echo $HUGGINGFACE_TOKEN | git -C Llama-2-13b-chat lfs pull
+
+echo "Cloning Llama-2-7b-chat-hf..."
+git clone https://huggingface.co/meta-llama/Llama-2-7b-chat
+echo $HUGGINGFACE_TOKEN | git -C Llama-2-7b-chat lfs pull
+
+echo "Cloning Llama-2-70b-chat-hf..."
+git clone https://huggingface.co/meta-llama/Llama-2-70b-chat
+echo $HUGGINGFACE_TOKEN | git -C Llama-2-70b-chat lfs pull
+
+# Navigate back to the previous directory
+cd ..
